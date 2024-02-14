@@ -12,7 +12,13 @@ header {
 }
 
 header h1 {
-    color: #000000;
+    color: #ffffff;
+}
+header p {
+    color: #ffffff;
+}
+header ul {
+    color: #ffffff;
 }
 
 ul {
