@@ -24,7 +24,8 @@ The following **bonus** features are implemented:
 
 ## Screenshot and/or Video Walkthrough
 
-<img src="https://imgur.com/gallery/4rAXx5x" title='Example Video Walkthrough' width='' alt='Example Video Walkthrough' />
+<img src="![Capture](https://github.com/perezsa1998/Platform_Computing/assets/160076244/e0af49c1-e062-4076-b39a-94aeb0231a1c)
+' />
 
 
 ## Notes:
