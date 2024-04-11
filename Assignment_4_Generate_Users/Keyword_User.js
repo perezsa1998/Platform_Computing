@@ -2,7 +2,6 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const { Options } = require('selenium-webdriver/chrome');
 
 async function runScript(url, keyword) {
-    
     const chromeOptions = new Options();
     chromeOptions.excludeSwitches('enable-logging');
 
@@ -10,7 +9,6 @@ async function runScript(url, keyword) {
         .forBrowser('chrome')
         .setChromeOptions(chromeOptions)
         .build();
-
     try {
         await driver.get(url);
         const keywordFound = await extendPresenceTime(driver, keyword);
@@ -26,7 +24,6 @@ async function runScript(url, keyword) {
         await driver.quit();
     }
 }
-
 async function extendPresenceTime(driver, keyword) {
     const content = await driver.findElement(By.tagName('body')).getText();
     if (content.includes(keyword)) {
