@@ -2,15 +2,12 @@ const { Builder, By } = require('selenium-webdriver');
 const { Options } = require('selenium-webdriver/chrome');
 
 async function runScript(url, keyword) {
-    
     const chromeOptions = new Options();
     chromeOptions.excludeSwitches('enable-logging');
-
     const driver = await new Builder()
         .forBrowser('chrome')
         .setChromeOptions(chromeOptions)
         .build();
-
     try {
         await driver.get(url);
         const presenceTime = await extendPresenceTime(driver, keyword);
@@ -19,7 +16,6 @@ async function runScript(url, keyword) {
         await driver.quit();
     }
 }
-
 async function extendPresenceTime(driver, keyword) {
     let keywordFound = false;
     let imagesFound = false;
@@ -30,7 +26,6 @@ async function extendPresenceTime(driver, keyword) {
         await driver.sleep(10000);
         keywordFound = true;
     }
-
     const images = await driver.findElements(By.tagName('img'));
     if (images.length > 0) {
         imagesFound = true;
@@ -38,12 +33,10 @@ async function extendPresenceTime(driver, keyword) {
             await driver.sleep(10000);
         }
     }
-
     const links = await driver.findElements(By.tagName('a'));
     if (links.length > 0) {
         linksFound = true;
     }
-
     if (keywordFound || imagesFound || linksFound) {
         if (keywordFound && imagesFound && linksFound) {
             console.log(`Keyword "${keyword}" found, images and links present on the page.`);
