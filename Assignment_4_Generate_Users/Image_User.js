@@ -9,16 +9,11 @@ async function extendPresenceTime(driver) {
     } else {
         console.log('No images found on the page.');
     }
-    
-    for (const image of images) {
-      
+    for (const image of images) {      
         await driver.sleep(10000); 
     }
 }
-
-
 async function runScript(url) {
-    
     const chromeOptions = new Options();
     chromeOptions.excludeSwitches('enable-logging');
 
@@ -26,7 +21,6 @@ async function runScript(url) {
         .forBrowser('chrome')
         .setChromeOptions(chromeOptions)
         .build();
-
     try {
         await driver.get(url);
         await extendPresenceTime(driver);
